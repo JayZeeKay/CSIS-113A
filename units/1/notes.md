@@ -42,7 +42,7 @@
 * Linker spits out ```.exe``` file
 * Can be run by double clicking or typing its name at a command prompt
 
-![Compile / Link Process](compile_link_process.png)
+![Compile / Link Process](compile_link_process.PNG)
 
 ## Tools for C++
 
