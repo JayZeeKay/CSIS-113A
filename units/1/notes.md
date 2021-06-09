@@ -8,6 +8,8 @@
 * All devices are connected to the CPU by a bus that allows data to travel in and out of the CPU
 * When a program is launched, data goes from disk to memory and then to CPU where its executed
 
+[Computer](computer.PNG)
+
 ### Memory
 
 * Memory is addressed as a series of bytes (8 bits)
@@ -16,6 +18,8 @@
   * Data: Information you will use to work with your program
 * Memory is located at an address
   * High level programing languages (C++) abstracts the work of memory location
+
+[Memory](memory.PNG)
 
 ### Creating a C++ Program
 
@@ -42,7 +46,7 @@
 * Linker spits out ```.exe``` file
 * Can be run by double clicking or typing its name at a command prompt
 
-![Compile / Link Process](compile_link_process.png)
+![Compile / Link Process](compile_link_process.PNG)
 
 ## Tools for C++
 
