@@ -8,7 +8,7 @@
 * All devices are connected to the CPU by a bus that allows data to travel in and out of the CPU
 * When a program is launched, data goes from disk to memory and then to CPU where its executed
 
-[Computer](computer.PNG)
+![Computer](computer.PNG)
 
 ### Memory
 
@@ -19,7 +19,7 @@
 * Memory is located at an address
   * High level programing languages (C++) abstracts the work of memory location
 
-[Memory](memory.PNG)
+![Memory](memory.PNG)
 
 ### Creating a C++ Program
 
