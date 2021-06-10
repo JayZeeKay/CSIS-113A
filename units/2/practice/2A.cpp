@@ -1,3 +1,15 @@
+/*
+Jacob Marinas
+
+ID: 0602306
+
+June 9, 2021
+
+Guided Practice 2A - Console Input
+
+How to input information from the keyboard into your program
+*/
+
 #include <iostream>
 
 using namespace std;
@@ -5,12 +17,15 @@ using namespace std;
 int main()
 {
 
-    int taxRate;
+	int age;
 
-    cout << &taxRate << endl;   // outputs the address of the variable
+	cout << "Please enter your age " << endl;
+	cin >> age;
 
-    cout << taxRate << endl;    // outputs the contents of the variable
+	int sqAge = age * age;
 
-    return 0;
+	cout << sqAge << " is the square of your age " << endl;
+
+	return 0;
 
 }
