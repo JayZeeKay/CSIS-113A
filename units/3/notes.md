@@ -96,7 +96,7 @@ if (visible)
 
 ![C++ Indentation](cppIndentation.PNG)
 
-* Java style makes the indentation smaller, but finding a missing brace can be harder to find
+* Java style makes the source code smaller, but finding a missing brace can be harder to find
 * C++ style takes up more space but aligns braces, easier to spot braces
 
 ### Why use braces
@@ -140,3 +140,85 @@ if (employeesInBuilding == 0);
 ```cpp
 bonusAmt = amountSold <= 35000 ? amountSold * .035 : 100 + amountSold * .075;
 ```
+
+## Logical Operators
+
+* Allows to make compound if statements
+
+* C++ has three logical operators
+  * Unary logical operator: NOT ```!```
+  * Logical operator AND ```&&```
+  * Logical operator OR ```||```
+
+### NOT Operator
+
+* Has the effect of flipping the value
+* Takes one boolean operand/expression
+
+```cpp
+bool on = true;
+bool off = !on;
+```
+
+* If the value is NOT true, then it is false
+
+### AND/OR Operator
+
+* Takes two boolean operands/expressions
+
+![AND/OR Operator](boolOperator.PNG)
+
+![AND Operator](andOperator.PNG)
+
+```cpp
+if (finalScore > 90.0 && allAssignmentsComplete == true) 
+{
+    classGrade = 'A';
+}
+```
+
+![OR Operator](orOperator.PNG)
+
+```cpp
+if (finalScore > 90.0 || allAssignmentsComplete == true) 
+{
+    classGrade = 'A';
+}
+```
+
+* Be weary of impossible conditions; cannot be both under 13 and over 55 at the same time
+
+```cpp
+if (age <= 13 && age >= 55) 
+{
+    discount = .18;
+}
+else
+{
+    discount = 0.0;
+}
+```
+
+* Unavoidable conditions; will always evaluate to true or false for any value
+
+```cpp
+if(age > 15 || age < 55)
+{
+   admission = 10.0;
+}
+else
+{
+   admission = 8.75;
+}
+```
+
+### Operator Precendence
+
+![Operator Precedence](operatorPrecedence.PNG)
+
+* Note that AND has higher precedence than OR
+
+```cpp
+10 < 15 || 5 > 8 && 3 > 5; // evaluated as 10 < 15 || (5 > 8 && 3 > 5) which is true
+```
+
