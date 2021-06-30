@@ -1,4 +1,4 @@
-# Unit 2
+# Unit 2 - Data Types
 
 ## Variables
 

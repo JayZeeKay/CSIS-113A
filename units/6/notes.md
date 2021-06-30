@@ -1,4 +1,4 @@
-# Unit 6
+# Unit 6 - Repetition; For Loops
 
 ## Introducing Iteration
 
@@ -62,7 +62,7 @@
 * Loop Goal: Goal of the problem
   * From previous example: Goal is to count the number of vowels that appear in a string
 
-![Psuedo code](psuedo.PNG)
+![Psuedo code](pseudo.PNG)
 
 ### Precondition/Post condition
 
@@ -256,4 +256,3 @@ for(; ;)
    
 }
 ```
-

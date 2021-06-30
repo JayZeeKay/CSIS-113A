@@ -1,4 +1,4 @@
-# Unit 7
+# Unit 7 - While loops
 
 ## Random Numbers
 
@@ -235,7 +235,7 @@ int main()
 
 ### The break statement
 
-![Break statement](breakPNG)
+![Break statement](break.PNG)
 
 * The break statement forces the flow of the code to jump past the closing brace of the loop it is contained within
   * In a nested loop, will only force the code to break out of the loop it is in; if in an inner loop, it will break out of the inner loop only
@@ -295,4 +295,3 @@ int main()
    return 0;
 }
 ```
-
