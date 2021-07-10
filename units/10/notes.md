@@ -192,4 +192,158 @@ void square(int x)
 }
 ```
 
-* Always ask yourself how many things does the function perform
+* Always ask yourself how many things does the function perform; if it is more than one you should maybe rethink things
+
+## Scope Rules
+
+* When you write functions, you should try to make them as portable as possible; be able to copy them from one program to another or put them in a library so they can be used in any future program
+  * A self-contained unit, kind of like a separate program in a big program
+
+* Local Variables - defined in the body of the function
+  * The variable can only be accessed within that function
+
+```cpp
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+void foo();
+
+int main()
+{
+   foo();
+   avariable = 25; // Can't do this because main knows nothing of aVariable
+   cout << aVariable;
+   return 0;
+}
+void foo()
+{
+int aVariable; // aVariable is local to foo and can only be used in foo
+   aVariable = 3;
+   cout << aVariable << endl;
+}
+```
+
+```cpp
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+void foo();
+
+int main()
+{
+int aVariable = 0;
+   foo();
+   avariable = 25; // aVariable is local to main
+   cout << aVariable;
+   return 0;
+}
+void foo()
+{
+int aVariable; // aVariable is local to foo and can only be used in foo
+   aVariable = 3;
+   cout << aVariable << endl;
+}
+```
+
+* While these two variables have the same name, they are not the same. Each one sits in its own memory location
+  * It's like two guys named Joe, same name different person
+
+![Scope](scope.PNG)
+
+### Global Variables
+
+```cpp
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+void foo();
+
+int aVariable; // Defined globally, outside of all functions
+
+
+int main()
+{
+   foo();
+   avariable = 25; 
+   cout << aVariable;
+   return 0;
+}
+void foo()
+{
+   aVariable = 3;
+   cout << aVariable << endl;
+}
+```
+
+* When foo() is invoked, the aVariable takes precedence over the global aVariable and cout prints 3
+
+### Block Scope
+
+```cpp
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+int x = 20;
+
+   {
+      int x = 10;
+      cout << x << endl;
+   }
+   {
+      cout << x << endl;
+   }
+
+   return 0;
+}
+```
+
+* A new instance of x is created inside the block; it is the same name but it is a new variable that can be only accessed in the block
+  * The first block will print 10
+  * The second block will print 20
+
+```cpp
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+
+   for(int i = 0; i < 100; i++)
+   {
+      cout << i * i << endl;
+   }
+   i = 20; //This is an error, i is outside the scope of loop 
+   cout << i << endl;
+
+   return 0;
+}
+```
+
+* i can only be accessed from within the block in which it was declared
+
+### The Stack and Heap
+
+* When your program gets built, the compiler will set aside some memory called the stack
+  * A data structure that is like a stack of plates with two functions, push and pop
+  * Vales are pushed on to (added) and popped (removed) from the top of the stack
+    * LIFO (Last In First Out) data structure
+  * When a function is called and variables declared in the function, they are declared in the stack
+  * Whenn a function returns, the variables for the function are popped off the stack
+    * In a way, C++ memory is like an accordian, growing as more variables are declared and shrinks when discarded
+
+* Avoid use of global variables
+  * Impossible to have your functions be loosely coupled
+  * When variables are global, they can be seen and modified by any function anywhere
+
