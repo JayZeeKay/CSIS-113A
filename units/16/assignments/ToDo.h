@@ -1,7 +1,7 @@
-#include <string>
-
 #ifndef TODO
 #define TODO
+
+#include <string>
 
 using std::string;
 
@@ -12,11 +12,15 @@ struct MyToDo
 	string priority;
 };
 
-void addToList(MyToDo addToList);
+MyToDo toDoList[];
+const int maxSize = 100;
+
+bool addToList(const MyToDo &addToList);
 bool addToList(string desc, string dueDate, int priority);
-string getNextItem(MyToDo &nextItem);
-void getNextItem(string &desc, string &date, int &priority);
-MyToDo[] getByPriority(MyToDo toDoList[], int priority);
+bool getNextItem(MyToDo &nextItem);
+bool getNextItem(string &desc, string &date, int &priority);
+bool getByPriority(MyToDo toDoList[], int priority);
+void printToDo();
 
 #endif
 
