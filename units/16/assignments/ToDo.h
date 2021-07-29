@@ -9,13 +9,10 @@ struct MyToDo
 {
 	string description;
 	string dueDate;
-	string priority;
+	int priority;
 };
 
-MyToDo toDoList[];
-const int maxSize = 100;
-
-bool addToList(const MyToDo &addToList);
+bool addToList(MyToDo &addToList);
 bool addToList(string desc, string dueDate, int priority);
 bool getNextItem(MyToDo &nextItem);
 bool getNextItem(string &desc, string &date, int &priority);

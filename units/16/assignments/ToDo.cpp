@@ -1,9 +1,15 @@
 #include <iostream>
 #include "ToDo.h"
 
-using namespace std;
+using std::cout;
+using std::endl;
 
-bool addToList(const MyToDo &addToList)
+const int maxSize = 100;
+MyToDo toDoList[maxSize];
+int size = 0;
+int next = 0;
+
+bool addToList( MyToDo &addToList)
 {
 	if (size < maxSize)
 	{
@@ -28,7 +34,7 @@ bool addToList(string desc, string date, int priority)
 
 bool getNextItem(MyToDo &nextItem)
 {
-	if (toDoList.empty())
+	if (size == 0)	
 		return false;
 	if (next >= 0)
 	{
@@ -55,7 +61,7 @@ bool getNextItem(string &desc, string &date, int &priority)
 
 bool getByPriority(MyToDo list[], int priority)
 {
-	if (toDoList.empty())
+	if (size == 0)
 		return false;
 	
 	int count = 0;

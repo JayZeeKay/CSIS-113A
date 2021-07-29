@@ -18,7 +18,6 @@ using namespace std;
 
 int main()
 {
-
 	MyToDo toDo;
 
 	cout << "Enter a description" << endl;
@@ -30,6 +29,6 @@ int main()
 	cout << "Enter a number priority" << endl;
 	cin >> toDo.priority;
 
-	addToList(&toDo);
+	addToList(*toDo);
 	return 0;
 }
