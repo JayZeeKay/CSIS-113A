@@ -9,7 +9,7 @@ MyToDo toDoList[maxSize];
 int size = 0;
 int next = 0;
 
-bool addToList( MyToDo &addToList)
+bool addToList(MyToDo &addToList)
 {
 	if (size < maxSize)
 	{
@@ -44,6 +44,7 @@ bool getNextItem(MyToDo &nextItem)
 		next++;
 		return true;
 	}
+	return false;
 }
 
 bool getNextItem(string &desc, string &date, int &priority)
@@ -83,6 +84,7 @@ bool getByPriority(MyToDo list[], int priority)
 
 void printToDo()
 {
+	//cout << "printToDo()" << endl;
 	for (int i = 0; i < size; i++)
 	{
 		cout << "Description: " << toDoList[i].description << endl;
